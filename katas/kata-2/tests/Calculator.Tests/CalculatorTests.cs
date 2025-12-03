@@ -58,6 +58,13 @@ namespace Calculator.Tests
             result.Should().Be(esperado);
         }
 
+        [Fact]
+        public void Divide_ByZero_ThrowsException()
+        {
+            Action action = () => _calculator.Divide(10, 0);
+            action.Should().Throw<DivideByZeroException>().WithMessage("Cannot divide by zero");
+        }
+
         // TODO: Implementa más tests usando TDD
         // Suggestions:
         // - Test multiply with positive numbers
