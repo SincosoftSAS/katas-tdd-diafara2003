@@ -34,18 +34,17 @@ namespace Calculator.Tests
             result.Should().Be(esperado);
         }
 
-        [Fact]
-        public void Multiply_TwoNumbers_ReturnsDifference()
+        [Theory]
+        [InlineData(10, 5, 50)]
+        [InlineData(10, 0, 0)]
+        [InlineData(5, 5, 25)]
+        public void Multiply_TwoNumbers_ReturnsDifference(int numero1, int numero2, int esperado)
         {
-            // Arrange
-            int a = 2;
-            int b = 5;
-
             // Act
-            int result = _calculator.Multiply(a, b);
+            int result = _calculator.Multiply(numero1, numero2);
 
             // Assert
-            result.Should().Be(10);
+            result.Should().Be(esperado);
         }
 
         // TODO: Implementa más tests usando TDD
