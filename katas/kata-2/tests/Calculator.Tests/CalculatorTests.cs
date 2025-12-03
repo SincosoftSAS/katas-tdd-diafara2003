@@ -7,18 +7,17 @@ namespace Calculator.Tests
     {
         private readonly Calculator _calculator = new();
 
-        [Fact]
-        public void Add_TwoPositiveNumbers_ReturnsSum()
+        [Theory]
+        [InlineData(5, 3, 8)]
+        [InlineData(10, 4, 14)]
+        [InlineData(0, 10, 10)]
+        public void Add_TwoPositiveNumbers_ReturnsSum(int numero1, int numero2, int experado)
         {
-            // Arrange
-            int a = 5;
-            int b = 3;
-
             // Act
-            int result = _calculator.Add(a, b);
+            var result = _calculator.Add(numero1, numero2);
 
             // Assert
-            result.Should().Be(8);
+            result.Should().Be(experado);
         }
 
         // [Fact]
