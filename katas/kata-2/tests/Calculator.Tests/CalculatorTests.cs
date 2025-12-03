@@ -37,6 +37,7 @@ namespace Calculator.Tests
         [Theory]
         [InlineData(10, 5, 50)]
         [InlineData(10, 0, 0)]
+        [InlineData(-2, 2, -4)]
         [InlineData(5, 5, 25)]
         public void Multiply_TwoNumbers_ReturnsDifference(int numero1, int numero2, int esperado)
         {
