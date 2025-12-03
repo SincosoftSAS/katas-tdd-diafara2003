@@ -11,27 +11,27 @@ namespace Calculator.Tests
         [InlineData(5, 3, 8)]
         [InlineData(10, 4, 14)]
         [InlineData(0, 10, 10)]
-        public void Add_TwoPositiveNumbers_ReturnsSum(int numero1, int numero2, int experado)
+        public void Add_TwoPositiveNumbers_ReturnsSum(int numero1, int numero2, int esperado)
         {
             // Act
             var result = _calculator.Add(numero1, numero2);
 
             // Assert
-            result.Should().Be(experado);
+            result.Should().Be(esperado);
         }
 
-        [Fact]
-        public void Subtract_TwoNumbers_ReturnsDifference()
+        [Theory]
+        [InlineData(10, 5, 5)]
+        [InlineData(10, 0, 10)]
+        [InlineData(0, 10, -10)]
+        [InlineData(5, 5, 0)]
+        public void Subtract_TwoNumbers_ReturnsDifference(int numero1, int numero2, int esperado)
         {
-            // Arrange
-            int a = 10;
-            int b = 4;
-        
             // Act
-            int result = _calculator.Subtract(a, b);
-        
+            int result = _calculator.Subtract(numero1, numero2);
+
             // Assert
-            result.Should().Be(6);
+            result.Should().Be(esperado);
         }
 
         // TODO: Implementa más tests usando TDD
