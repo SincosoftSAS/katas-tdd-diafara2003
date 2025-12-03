@@ -47,14 +47,15 @@ namespace Calculator.Tests
             result.Should().Be(esperado);
         }
 
-        [Fact]
-        public void Divide_TwoNumbers_ReturnsDifference()
+        [Theory]
+        [InlineData(10, 5, 2)]
+        [InlineData(8, 2, 4)]
+        [InlineData(5, 5, 1)]
+        public void Divide_TwoNumbers_ReturnsDifference(int numero1, int numero2, int esperado)
         {
-            int a = 10, b = 5;
+            int result = _calculator.Divide(numero1, numero2);
 
-            int result = _calculator.Divide(a, b);
-
-            result.Should().Be(2);
+            result.Should().Be(esperado);
         }
 
         // TODO: Implementa más tests usando TDD
