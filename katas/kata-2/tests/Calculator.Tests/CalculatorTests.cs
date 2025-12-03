@@ -47,6 +47,16 @@ namespace Calculator.Tests
             result.Should().Be(esperado);
         }
 
+        [Fact]
+        public void Divide_TwoNumbers_ReturnsDifference()
+        {
+            int a = 10, b = 5;
+
+            int result = _calculator.Divide(a, b);
+
+            result.Should().Be(2);
+        }
+
         // TODO: Implementa más tests usando TDD
         // Suggestions:
         // - Test multiply with positive numbers
