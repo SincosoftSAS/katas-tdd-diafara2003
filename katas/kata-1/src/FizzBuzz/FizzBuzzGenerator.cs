@@ -4,9 +4,24 @@ namespace FizzBuzz
     {
         public static List<string> Generate(int count)
         {
-            // TODO: Implement FizzBuzz logic using TDD
-            // Start with the simplest case that makes the first test pass
-            throw new NotImplementedException("Implement using TDD: Red → Green → Refactor");
+            var result = new List<string>();
+
+            for (var i = 1; i <= count; i++)
+            {
+                if (IsMultipleOf(3, i) && IsMultipleOf(5, i))
+                    result.Add("FizzBuzz");
+                else if (IsMultipleOf(3, i))
+                    result.Add("Fizz");
+                else if (IsMultipleOf(5, i))
+                    result.Add("Buzz");
+                else
+                    result.Add(i.ToString());
+            }
+
+            return result;
         }
+
+
+        private static bool IsMultipleOf(int multiple, int dividend) => dividend % multiple == 0;
     }
 }
